@@ -1,0 +1,212 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  text-align: center;
+  background-color: #283149;
+  font-family: 'Arvo', serif;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+h1 {
+  font-size: 5rem;
+  color: #DBEDF3;
+  text-shadow: 3px 0 #DA0463;
+  margin: 30px 0 50px;
+}
+
+.set {
+  margin: 50px auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px;
+  max-width: 900px;
+}
+
+.drum {
+  outline: none;
+  border: 10px solid #404B69;
+  font-size: 5rem;
+  font-family: 'Arvo', serif;
+  line-height: 2;
+  font-weight: 900;
+  color: #DA0463;
+  text-shadow: 3px 0 #DBEDF3;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 180px;
+  height: 180px;
+  text-align: center;
+  margin: 10px;
+  background-color: white;
+  cursor: pointer;
+  transition: all 0.07s;
+  position: relative;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.drum .key-label {
+  font-size: 1.8rem;
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  color: white;
+  background-color: rgba(64, 75, 105, 0.7);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.drum .sound-name {
+  font-size: 1.2rem;
+  color: white;
+  font-weight: bold;
+  position: absolute;
+  bottom: 15px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  background-color: rgba(64, 75, 105, 0.7);
+  padding: 5px;
+}
+
+/* Изображения для каждой кнопки - ИСПРАВЛЕННЫЕ ПУТИ */
+.w {
+  background-image: url('images/crash.png');
+}
+
+.a {
+  background-image: url('images/kick.png');
+}
+
+.s {
+  background-image: url('images/snare.png');
+}
+
+.d {
+  background-image: url('images/tom1.png');
+}
+
+.j {
+  background-image: url('images/tom2.png');
+}
+
+.k {
+  background-image: url('images/tom3.png');
+}
+
+.l {
+  background-image: url('images/tom4.png');
+}
+
+/* Эффект при нажатии */
+.pressed {
+  transform: scale(0.95);
+  border-color: #DA0463;
+  box-shadow: 0 0 20px #DA0463;
+}
+
+footer {
+  color: #DBEDF3;
+  font-size: 1.5rem;
+  margin-top: 30px;
+  padding: 20px;
+}
+
+.instructions {
+  background-color: rgba(64, 75, 105, 0.7);
+  border-radius: 15px;
+  padding: 20px;
+  margin-top: 20px;
+  color: #DBEDF3;
+  max-width: 800px;
+  width: 100%;
+}
+
+.instructions h2 {
+  color: #DA0463;
+  margin-bottom: 15px;
+}
+
+.instructions p {
+  margin: 10px 0;
+  font-size: 1.2rem;
+}
+
+/* Фоллбэк цвет фона если изображение не загрузится */
+.drum:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(145deg, #404B69, #283149);
+  z-index: -1;
+}
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 3.5rem;
+  }
+  
+  .drum {
+    width: 140px;
+    height: 140px;
+    font-size: 4rem;
+  }
+  
+  .set {
+    gap: 15px;
+  }
+  
+  .drum .key-label {
+    font-size: 1.5rem;
+    width: 35px;
+    height: 35px;
+  }
+  
+  .drum .sound-name {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 2.5rem;
+  }
+  
+  .drum {
+    width: 120px;
+    height: 120px;
+    font-size: 3rem;
+  }
+  
+  .drum .key-label {
+    font-size: 1.2rem;
+    width: 30px;
+    height: 30px;
+  }
+  
+  .drum .sound-name {
+    font-size: 0.9rem;
+  }
+}
